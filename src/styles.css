@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+html{
+   background-image: url(https://pixabay.com/get/g96337ea4edbe0b64e2e28bd62dc673fa32fa7ffb2e8530e12dd9b344db4ace55569aba01ebfaf669ef0c0e6594c487a6f5ed71e63f38cbde89aea6d019e0c65f_1280.jpg?attachment=)
+  }
+h3
+{
+  display:flex;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  align-items:center;
+  justify-content:center;
+}
+
+h1
+{
+  display:flex;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  align-items:center;
+  justify-content:center;
+}
+
+.mediclaim{
+
+  margin-top: 10px;
+  display:flex;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  align-items:center;
+  justify-content:center;
+}

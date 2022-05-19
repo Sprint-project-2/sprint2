@@ -1,0 +1,73 @@
+<h1>REGISTRATION DETAILS </h1><br>
+
+
+<div>
+    <div style="width: 100%;height: 100%; font-size: 18px;" class="mediclaim">
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <table>
+            
+            <div style="width: 100%;">
+                <td><label> Name:</label></td>
+                <td><input type="text" [(ngModel)]="name" id="name" formControlName="fname" style="margin-left: 53px;">
+                <div *ngIf="f['fname'].touched&&f['fname'].invalid"></div>
+                    <div style="margin-left: 55px;" *ngIf="f['fname'].errors?.['required']"> Enter Firstname</div> 
+                    <div style="margin-left: 15px;" *ngIf="f['fname'].errors?.['minlength']">Firstname should be min 4 character</div> </td>
+                </div>
+            
+                <div style="width: 100%;">
+                    <td><label>Email ID:</label></td>
+                    <td><input type="text" [(ngModel)]="email" id="email"formControlName="emailid" style="margin-left: 30px;">
+                    <div *ngIf="f['emailid'].touched&&f['fname'].invalid"></div>
+                        <div style="margin-left: 30px;"  *ngIf="f['emailid'].errors?.['required']"> Enter Email ID</div> 
+                        <div style="margin-left: 30px;" *ngIf="f['emailid'].errors?.['minlength']">Enter Vaild Email ID</div> </td>
+                </div>
+
+                <div style="width: 100%;">
+                    <td><label>Contact No:</label></td>
+                    <td> <input type="text" [(ngModel)]="contactno" id="contactno" formControlName="contactno"style="margin-left: 15px;" > </td>
+                    <div *ngIf="f['contactno'].touched&&f['contactno'].invalid">
+                        <div style="margin-left: 110px;"  *ngIf="f['contactno'].errors?.['required']"> Enter Contact Number</div>
+                        <div style="margin-left: 135px;" *ngIf="f['contactno'].errors?.['minlength']">Contact Number should be min 10 character</div> 
+                    </div>
+                </div> 
+
+
+            <div style="width: 100%;">
+                <td><label>City:</label></td>
+               <td> <input type="text" [(ngModel)]="city" id="city" formControlName="city" style="margin-left: 68px;"> </td>
+                <div *ngIf="f['city'].touched&&f['city'].invalid">
+                    <div style="margin-left: 110px;" *ngIf="f['city'].errors?.['required']"> Enter City</div>
+                </div>
+            </div>
+
+            <div style="width: 100%;margin-right: 10px;">
+                <td><label>Pincode:</label></td>
+                <td><input type="text" [(ngModel)]="pincode" id="pincode" formControlName="pincode" style="margin-left: 40px;"></td>
+                <div *ngIf="f['pincode'].touched&&f['pincode'].invalid">
+                    <div style="margin-left: 110px;" *ngIf="f['pincode'].errors?.['required']"> Enter Pincode</div>
+                    <div style="margin-left: 140px;" *ngIf="f['pincode'].errors?.['minlength']">Pincode should be min 6 character</div>
+                </div>
+            </div>
+            
+            <div style="width: 100%;">
+                <td> <label>Date Of Birth:</label></td>
+                <td> <input type="text" [(ngModel)]="dob" id="dob" formControlName="dateofbirth"></td>
+                <div *ngIf="f['dateofbirth'].touched&&f['dateofbirth'].invalid">
+                    <div style="margin-left: 110px;" *ngIf="f['dateofbirth'].errors?.['required']"> Enter Date Of Birth(dd/mm/yyyy)</div>
+                    <div style="margin-left: 140px;" *ngIf="f['dateofbirth'].errors?.['minlength']">Date Of Birth </div>
+                </div>
+            </div>
+
+        <tr>
+            <button [disabled]="!form.valid" type="submit">REGISTER</button> &nbsp;&nbsp;
+        </tr>
+        </table>
+        </form>
+ </div>
+
+</div>
+      <!-- The routed views render in the <router-outlet>-->
+    <router-outlet></router-outlet>
+    
+
+

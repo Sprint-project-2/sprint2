@@ -1,0 +1,62 @@
+<h1>UPDATE DETAILS </h1><br>
+
+<div>
+
+    <div style="width: 100%;height: 100%; font-size: 18px;" class="mediclaim">
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <table>
+
+                <div style="width: 100%;">
+                    <td><label>Policy Number:</label></td>
+                    <td><input type="text" formControlName="policyno" style="margin-left: 12px;">
+                    <div *ngIf="f['policyno'].touched&&f['policyno'].invalid"></div>
+                        <div style="margin-left: 30px;" *ngIf="f['policyno'].errors?.['required']">Enter Policy Number:</div> 
+                        <div style="margin-left: 30px;" *ngIf="f['policyno'].errors?.['minlength']">Policy Number should be min 6 character</div> </td>
+                </div>
+
+                <div style="width: 100%;">
+                    <td><label>Email ID:</label></td>
+                    <td><input type="text" formControlName="emailid" style="margin-left: 55px;">
+                    <div *ngIf="f['emailid'].touched&&f['emailid'].invalid"></div>
+                        <div style="margin-left: 30px;" *ngIf="f['emailid'].errors?.['required']">Enter Email ID:</div> 
+                        <div style="margin-left: 30px;" *ngIf="f['emailid'].errors?.['minlength']">Enter Vaild Email ID</div> </td>
+                </div>
+
+                <div style="width: 100%;">
+                    <td><label>Contact Number:</label></td>
+                    <td> <input type="text" formControlName="contactno" style="margin-left: 1px;"> </td>
+                    <div *ngIf="f['contactno'].touched&&f['contactno'].invalid">
+                        <div style="margin-left: 135px;" *ngIf="f['contactno'].errors?.['required']">Enter Contact Number</div>
+                        <div style="margin-left: 135px;" *ngIf="f['contactno'].errors?.['minlength']">Contact Number should be min 10 character</div> 
+                    </div>
+                </div> 
+            <div style="width: 100%;">
+                <td><label>City:</label></td>
+               <td> <input type="text" formControlName="city" style="margin-left: 90px;"> </td>
+                <div *ngIf="f['city'].touched&&f['city'].invalid">
+                    <div style="margin-left: 140px;" *ngIf="f['city'].errors?.['required']">Enter City</div>
+                </div>
+            </div>
+
+            <div style="width: 100%;margin-right: 10px;">
+                <td><label>Pincode:</label></td>
+                <td><input type="text" formControlName="pincode" style="margin-left: 65px;"></td>
+                <div *ngIf="f['pincode'].touched&&f['pincode'].invalid">
+                    <div style="margin-left: 140px;" *ngIf="f['pincode'].errors?.['required']">Enter Pincode</div>
+                    <div style="margin-left: 140px;" *ngIf="f['pincode'].errors?.['minlength']">Pincode should be min 6 character</div>
+                </div>
+            </div>
+        <tr>
+            <button [disabled]="!form.valid" type="submit">Update</button>
+        </tr>
+        </table>
+        </form>
+ </div>
+
+</div>
+      <!-- The routed views render in the <router-outlet>-->
+      <router-outlet></router-outlet>
+    
+
+
+

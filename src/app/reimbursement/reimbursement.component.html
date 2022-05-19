@@ -1,0 +1,46 @@
+
+
+<h1 >REIMBURSEMENT DETAILS </h1>
+
+<!-- <marquee behavior="slide" direction="left">Get assistance with Health Insurance claims</marquee> -->
+
+<div >
+
+<div style="width: 100%;height: 100%; font-size: 18px;" class="mediclaim">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <table>
+
+        <div style="width: 100%;" >
+            <td><label>Billing Date:</label></td>
+            <td><input type="text" formControlName="billdate" style="margin-left: 25px;"></td>
+            <div *ngIf="f['policyno'].touched&&f['policyno'].invalid" >
+                <div *ngIf="f['policyno'].errors?.['required']">Enter Billing Date(dd/mm/yyyy)</div>
+                <div *ngIf="f['policyno'].errors?.['minlength']">Billing Date</div>
+            </div>
+        </div>
+       
+        <div style="width: 100%;">
+            <td><label>Billing Number:</label></td>
+            <td><input type="text" formControlName="billno"></td>
+            <div *ngIf="f['billno'].touched&&f['billno'].invalid">
+                <div *ngIf="f['billno'].errors?.['required']">Enter Billing Number</div>
+                <div *ngIf="f['billno'].errors?.['minlength']">Billing Number should be min 10 character</div>
+            </div>
+        </div>
+
+        <div style="width: 100%;">
+            <td><label>Billing Amount:</label></td>
+            <td><input type="text" formControlName="billingamount"></td>
+            <div *ngIf="f['billingamount'].touched&&f['billingamount'].invalid">
+                <div *ngIf="f['billingamount'].errors?.['required']">Enter Billing Amount</div>
+                <div *ngIf="f['billingamount'].errors?.['minlength']">Billing Amount should be min 5 character</div>
+            </div>
+        </div>
+
+        <button [disabled]="!form.valid" type="submit">REGISTER</button>
+    </table>
+    </form>
+</div>
+       
+        
+

@@ -1,0 +1,40 @@
+
+
+<h1>CASHLESS DETAILS </h1>
+<div class="mediclaim">
+
+<!-- <marquee behavior="slide" direction="left">Get assistance with Health Insurance claims</marquee> -->
+
+<table>
+
+
+<div style="width: 100%;height: 100%; font-size: 18px;" class="mediclaim">
+    <form [formGroup]="form">
+        <div style="width: 100%;">
+           <td> <label>Application Number:</label></td>
+           <td><input type="text" formControlName="fname"> <input type="button" value="Search"> </td> 
+            <div *ngIf="f['applicationno'].touched&&f['applicationno'].invalid"> <input type="button" value="Search">
+                <div *ngIf="f['applicationno'].errors?.['required']">Pls enter Application Number</div>
+                <div *ngIf="f['applicationno'].errors?.['minlength']">Application Number should be min 10 character</div>                
+            </div>            
+        </div>       
+    </form>
+</div>
+ 
+
+<!-- <nav>
+    <ul>
+      <li><a routerLink="/cashless-component" routerLinkActive="active">First Component</a></li>
+      <li><a routerLink="/reimbursement-component" routerLinkActive="active">Second Component</a></li>
+    </ul>
+  </nav> -->
+
+  <input type="button" value="Accept"> &nbsp; &nbsp;
+  <input type="button" value="Denied"> &nbsp; &nbsp;
+  <button (click)="displayreg()">Query</button>
+  <!-- The routed views render in the <router-outlet>-->
+  <router-outlet></router-outlet>
+</table>
+  </div>
+
+  

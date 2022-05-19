@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/87bcefbf-acc9-4341-b07d-cea9258f0278/resourceGroups/newmediclaim/providers/Microsoft.Web/sites/newmediclaim",
+    "appService.deploySubpath": "dist\\mediclaim"
+}
